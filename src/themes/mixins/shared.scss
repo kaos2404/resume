@@ -1,0 +1,39 @@
+@mixin bg($color, $imp: false) {
+  @if $imp == true {
+    background-color: $color !important;
+  } @else {
+    background-color: $color;
+  }
+}
+
+@mixin clr($color, $imp: false) {
+  @if $imp == true {
+    color: $color !important;
+  } @else {
+    color: $color;
+  }
+}
+
+@mixin shadow($shadow, $imp: false) {
+  @if $imp == true {
+    box-shadow: $shadow !important;
+  } @else {
+    box-shadow: $shadow;
+  }
+}
+
+@mixin brdr($color, $width: 1px, $position: all, $imp: false) {
+  @if $position == all {
+    @if $imp == true {
+      border: $width solid $color !important;
+    } @else {
+      border: $width solid $color;
+    }
+  } @else {
+    @if $imp == true {
+      border-#{$position}: $width solid $color !important;
+    } @else {
+      border-#{$position}: $width solid $color;
+    }
+  }
+}

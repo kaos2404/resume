@@ -1,0 +1,49 @@
+.container {
+  height: 100%;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  touch-action: pan-y !important;
+  .snap-to {
+    scroll-snap-align: start;
+  }
+}
+section {
+  height: 100%;
+  margin: auto;
+  display: block;
+  padding: 4rem 8rem;
+  overflow-y: auto;
+  touch-action: pan-y;
+  .header {
+    font-size: 1.5rem;
+  }
+  .picture {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    margin: 1rem calc(50% - 4rem);
+  }
+  span {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    section {
+      width: 100%;
+      padding: 3rem 1rem;
+      .picture {
+        height: 6rem;
+        width: 6rem;
+        float: left;
+        margin: 1rem;
+        border-width: 0.25rem;
+      }
+      span {
+        text-align: initial;
+      }
+    }
+  }
+}

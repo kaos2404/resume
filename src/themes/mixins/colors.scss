@@ -1,0 +1,17 @@
+@use 'shared';
+
+@mixin core($clr) {
+  @each $type in map-keys($clr) {
+    .#{$type}-clr {
+      @include shared.clr(map-get($clr, $type));
+    }
+  }
+}
+
+@mixin icons($icons) {
+  @each $type in map-keys($icons) {
+    .#{$type}-clr {
+      @include shared.clr(map-get($icons, $type));
+    }
+  }
+}

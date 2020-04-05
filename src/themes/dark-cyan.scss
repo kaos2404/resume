@@ -1,0 +1,13 @@
+@use 'mixins/theme';
+
+$config: (
+  main-clr: #e7e7e7,
+  primary-bg: #00838f,
+  primary-clr: #181818,
+  overlay-bg: #3f3f3f,
+  accent: #ffb300,
+  green: #00e676,
+  scroll-track: #333333
+);
+
+@include theme.boot($config);

@@ -1,0 +1,10 @@
+@use 'shared';
+
+@mixin core($backgrounds) {
+  @each $type in map-keys($backgrounds) {
+    .#{$type}-bg {
+      @include shared.bg(map-get($backgrounds, $type));
+    }
+  }
+}
+

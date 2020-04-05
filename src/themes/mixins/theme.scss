@@ -1,0 +1,61 @@
+@use 'backgrounds';
+@use 'colors';
+@use 'borders';
+@use 'misc';
+
+@mixin core($config) {
+  @if (map-has-key($config, 'backgrounds')) {
+    @include backgrounds.core(map-get($config, 'backgrounds'));
+  }
+  @if (map-has-key($config, 'colors')) {
+    @include colors.core(map-get($config, 'colors'));
+  }
+  @if (map-has-key($config, 'icons')) {
+    @include colors.icons(map-get($config, 'icons'));
+  }
+  @if (map-has-key($config, 'borders')) {
+    @include borders.core(map-get($config, 'borders'));
+  }
+  @if (map-has-key($config, 'nav')) {
+    @include misc.nav(map-get($config, 'nav'));
+  }
+  @if (map-has-key($config, 'scroll')) {
+    @include misc.scroll(map-get($config, 'scroll'));
+  }
+}
+
+@mixin boot($boot) {
+  $config: (
+    backgrounds: (
+      main: map-get($boot, 'primary-clr'),
+      banner: map-get($boot, 'primary-bg'),
+      nav-bar: map-get($boot, 'primary-bg'),
+      overlay: map-get($boot, 'overlay-bg'),
+      detail: rgba(map-get($boot, 'overlay-bg'), 0.1)
+    ),
+    colors: (
+      main: map-get($boot, 'main-clr'),
+      menu-icon: map-get($boot, 'primary-clr'),
+      accent: map-get($boot, 'accent')
+    ),
+    nav: (
+      clr: map-get($boot, 'primary-clr'),
+      hvr: map-get($boot, 'accent')
+    ),
+    borders: (
+      pic-border: (
+        clr: map-get($boot, 'accent'),
+        width: 0.5rem
+      )
+    ),
+    scroll: (
+      track: map-get($boot, 'scroll-track'),
+      bar: map-get($boot, 'accent')
+    ),
+    icons: (
+      detail-icon: map-get($boot, 'accent')
+    )
+  );
+
+  @include core($config);
+}

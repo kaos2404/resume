@@ -1,0 +1,36 @@
+<link rel="stylesheet" type="text/css" [href]="themeService.cssUrl" />
+<app-navbar (close)="closeNavBar($event)" [state]="sideNav" [bannerDown]="bannerDown"></app-navbar>
+<div
+  class="banner banner-bg"
+  (panup)="bannerDown = false"
+  (pandown)="bannerDown = true"
+  [ngClass]="{ down: bannerDown }"
+>
+  <button
+    class="home nav-link"
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    (click)="breadcrumbIcon = null"
+  >
+    <mat-icon class="nav-icon-clr">home</mat-icon>
+  </button>
+  <div class="breadcrumb mobile-only" *ngIf="breadcrumbIcon">
+    <div class="nav-link active">
+      <mat-icon class="menu-icon-clr">keyboard_arrow_right</mat-icon>
+      <mat-icon class="nav-icon-clr">{{ breadcrumbIcon }}</mat-icon>
+    </div>
+  </div>
+  <button class="nav mobile-only" (click)="toggleNavBar($event)">
+    <mat-icon class="menu-icon-clr">menu</mat-icon>
+  </button>
+  <button class="mobile desktop-only nav-link active">
+    <mat-icon class="nav-icon-clr">mobile_friendly</mat-icon>
+  </button>
+</div>
+
+<div class="content" [ngClass]="{ down: bannerDown }">
+  <router-outlet></router-outlet>
+</div>
+
+<img class="preload-image" src="assets/img/me.jpg" />

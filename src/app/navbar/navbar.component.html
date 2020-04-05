@@ -1,0 +1,60 @@
+<div
+  class="nav-bar nav-bar-bg"
+  [ngClass]="{ open: state, shadow: themeService.isLight, down: bannerDown }"
+  appClickOutside
+  (clickOutside)="onClickedOutside($event)"
+>
+  <button class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/details" routerLinkActive="active">
+    <mat-icon class="nav-icon-clr">account_circle</mat-icon>
+    <div class="tooltip">
+      <span>Personal Details</span>
+    </div>
+  </button>
+  <button class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/skills" routerLinkActive="active">
+    <mat-icon class="nav-icon-clr">assessment</mat-icon>
+    <div class="tooltip">
+      <span>Skills</span>
+    </div>
+  </button>
+  <button class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/academics" routerLinkActive="active">
+    <mat-icon class="nav-icon-clr">school</mat-icon>
+    <div class="tooltip">
+      <span>Academics</span>
+    </div>
+  </button>
+  <button class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/work" routerLinkActive="active">
+    <mat-icon class="nav-icon-clr">work</mat-icon>
+    <div class="tooltip">
+      <span>Work History</span>
+    </div>
+  </button>
+  <button class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/achievements" routerLinkActive="active">
+    <mat-icon class="nav-icon-clr">emoji_events</mat-icon>
+    <div class="tooltip">
+      <span>Achievements</span>
+    </div>
+  </button>
+  <button class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/code" routerLinkActive="active">
+    <mat-icon class="nav-icon-clr">code</mat-icon>
+    <div class="tooltip">
+      <span>Code</span>
+    </div>
+  </button>
+  <button class="nav-link themes">
+    <mat-icon class="nav-icon-clr">palette</mat-icon>
+    <div class="themes-container">
+      <div class="themes overlay-bg">
+        <div
+          class="theme"
+          (click)="themeService.setTheme(theme.name)"
+          [ngClass]="{ light: theme.light, active: themeService.theme == theme.name }"
+          *ngFor="let theme of themeService.themes"
+          [title]="theme.name | titlecase"
+        >
+          <div class="color" [ngStyle]="{ 'background-color': theme.primary }"></div>
+          <div class="color" [ngStyle]="{ 'background-color': theme.accent }"></div>
+        </div>
+      </div>
+    </div>
+  </button>
+</div>

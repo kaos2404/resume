@@ -1,0 +1,49 @@
+@use 'shared';
+
+@mixin nav($nav) {
+  .nav-link {
+    &.active,
+    &:focus {
+      .nav-icon-clr {
+        @include shared.clr(map-get($nav, hvr));
+      }
+    }
+    .nav-icon-clr {
+      @include shared.clr(map-get($nav, clr));
+      transition: color 0.25s ease 0.05s;
+      &:hover {
+        @include shared.clr(map-get($nav, hvr));
+      }
+    }
+  }
+
+  .link-ref {
+    text-decoration: underline;
+    cursor: pointer;
+    color: inherit;
+    &:visited {
+      color: inherit;
+    }
+    &:hover {
+      @include shared.clr(map-get($nav, hvr));
+    }
+  }
+}
+
+@mixin scroll($scroll) {
+  ::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: map-get($scroll, 'track');
+    padding: 1rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: map-get($scroll, 'bar');
+    border-radius: 1rem;
+  }
+  ::-webkit-scrollbar-corner {
+    background-color: map-get($scroll, 'track');
+  }
+}

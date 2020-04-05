@@ -1,0 +1,25 @@
+@use 'shared';
+
+@mixin core($borders) {
+  @each $type in map-keys($borders) {
+    @include border(map-get($borders, $type), $type);
+  }
+}
+
+@mixin border($border, $prefix) {
+  .#{$prefix}-all {
+    @include shared.brdr(map-get($border, clr), map-get($border, width), all, map-get($border, imp));
+  }
+  .#{$prefix}-top {
+    @include shared.brdr(map-get($border, clr), map-get($border, width), top, map-get($border, imp));
+  }
+  .#{$prefix}-right {
+    @include shared.brdr(map-get($border, clr), map-get($border, width), right, map-get($border, imp));
+  }
+  .#{$prefix}-bottom {
+    @include shared.brdr(map-get($border, clr), map-get($border, width), bottom, map-get($border, imp));
+  }
+  .#{$prefix}-left {
+    @include shared.brdr(map-get($border, clr), map-get($border, width), left, map-get($border, imp));
+  }
+}
