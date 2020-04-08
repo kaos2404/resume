@@ -2,8 +2,7 @@
 
 @mixin nav($nav) {
   .nav-link {
-    &.active,
-    &:focus {
+    &.active {
       .nav-icon-clr {
         @include shared.clr(map-get($nav, hvr));
       }

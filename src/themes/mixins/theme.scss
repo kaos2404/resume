@@ -31,7 +31,8 @@
       banner: map-get($boot, 'primary-bg'),
       nav-bar: map-get($boot, 'primary-bg'),
       overlay: map-get($boot, 'overlay-bg'),
-      detail: rgba(map-get($boot, 'overlay-bg'), 0.1)
+      detail: rgba(map-get($boot, 'overlay-bg'), 0.25),
+      accent: map-get($boot, 'accent')
     ),
     colors: (
       main: map-get($boot, 'main-clr'),

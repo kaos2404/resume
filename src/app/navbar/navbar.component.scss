@@ -30,8 +30,13 @@
       }
     }
     &:focus,
-    &:active {
+    &:active,
+    &.active {
       outline: none;
+      cursor: initial;
+      .tooltip {
+        display: none;
+      }
     }
     .tooltip {
       position: absolute;

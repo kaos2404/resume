@@ -1,15 +1,10 @@
 .container {
   height: 100%;
   overflow: auto;
-  scroll-snap-type: y mandatory;
   display: flex;
-  .snap-to {
-    scroll-snap-align: start;
-  }
 }
 
 section {
-  height: 100%;
   width: 50%;
   display: block;
   padding: 4rem 8rem;
@@ -30,7 +25,7 @@ section {
     align-items: center;
     margin: 0.25rem 0;
     border-radius: 0.25rem;
-    padding: 0.25rem 1rem;
+    padding: 0.5rem;
     position: relative;
     user-select: text;
     .icon {
@@ -79,7 +74,7 @@ section {
     display: block;
     section {
       width: 100%;
-      padding: 3rem 1rem;
+      padding: 2rem 1rem;
     }
   }
 }
