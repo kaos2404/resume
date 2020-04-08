@@ -1,5 +1,5 @@
 {
-  "name": "due-date",
+  "name": "resume",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "git": "ng run git --base-href=https://kaos2404.github.io/resume/"
+    "git": "ng build --prod --base-href=https://kaos2404.github.io/resume/"
   },
   "private": true,
   "dependencies": {
