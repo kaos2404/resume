@@ -3,5 +3,26 @@
   (swipeleft)="swipeNavigate.onSwipeLeft($event)"
   (swiperight)="swipeNavigate.onSwipeRight($event)"
 >
-  Achievements
+  <section>
+    <span class="header accent-clr"
+      >Achievements
+      <button class="filters detail-bg">
+        <div class="filter-container">
+          <div
+            class="filter detail-bg"
+            *ngFor="let item of filter"
+            [ngClass]="{ 'detail-icon-clr': item.active }"
+            (click)="onToggleFilter(item)"
+          >
+            <i class="fas fa-{{ item.type }}"></i>
+          </div>
+        </div>
+        <mat-icon class="main-clr">filter_list</mat-icon>
+      </button></span
+    >
+    <div class="detail detail-bg" *ngFor="let item of list | appFilter: filterBy:filter">
+      <i class="fas fa-{{ item.type }} icon detail-icon-clr"></i>
+      <span>{{ item.message }}</span>
+    </div>
+  </section>
 </div>
