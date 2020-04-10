@@ -26,7 +26,7 @@ export class SkillsComponent {
         ]
       },
       {
-        icon: 'vial',
+        icon: 'flask',
         type: 'fas',
         name: 'Jasmine/Karma Unit Testing',
         description: [
