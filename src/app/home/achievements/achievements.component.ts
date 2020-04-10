@@ -2,31 +2,18 @@ import { Component } from '@angular/core'
 
 import { SwipeNavigateService } from 'src/app/common/service/swipe-navigate.service'
 
+import { Achievement, Filter } from 'src/app/common/model/achievements.model'
+
 @Component({
   templateUrl: './achievements.component.html',
   styleUrls: ['./achievements.component.scss']
 })
 export class AchievementsComponent {
-  public list: {
-    type: 'award' | 'certificate' | 'scroll'
-    message: string
-  }[]
+  public list: Achievement[]
 
-  public filter: {
-    type: 'award' | 'certificate' | 'scroll'
-    active: boolean
-  }[]
+  public filter: Filter[]
 
-  public filterBy: (
-    i: {
-      type: 'award' | 'certificate' | 'scroll'
-      message: string
-    },
-    filter: {
-      type: 'award' | 'certificate' | 'scroll'
-      active: boolean
-    }[]
-  ) => boolean
+  public filterBy: (i: Achievement, filter: Filter[]) => boolean
   constructor(public swipeNavigate: SwipeNavigateService) {
     this.list = [
       {
@@ -102,16 +89,7 @@ export class AchievementsComponent {
       }
     ]
 
-    this.filterBy = (
-      i: {
-        type: 'award' | 'certificate' | 'scroll'
-        message: string
-      },
-      filter: {
-        type: 'award' | 'certificate' | 'scroll'
-        active: boolean
-      }[]
-    ) =>
+    this.filterBy = (i: Achievement, filter: Filter[]) =>
       filter
         .filter(i => i.active)
         .map(i => i.type)

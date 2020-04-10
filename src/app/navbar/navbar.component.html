@@ -4,37 +4,61 @@
   appClickOutside
   (clickOutside)="onClickedOutside($event)"
 >
-  <button class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/details" routerLinkActive="active">
+  <button
+    matRipple
+    class="nav-link"
+    (click)="onLinkClicked($event)"
+    routerLink="/home/details"
+    routerLinkActive="active"
+  >
     <mat-icon class="nav-icon-clr">account_circle</mat-icon>
     <div class="tooltip">
       <span>Personal Details</span>
     </div>
   </button>
-  <button class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/skills" routerLinkActive="active">
+  <button
+    matRipple
+    class="nav-link"
+    (click)="onLinkClicked($event)"
+    routerLink="/home/skills"
+    routerLinkActive="active"
+  >
     <mat-icon class="nav-icon-clr">assessment</mat-icon>
     <div class="tooltip">
       <span>Skills</span>
     </div>
   </button>
-  <button class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/academics" routerLinkActive="active">
+  <button
+    matRipple
+    class="nav-link"
+    (click)="onLinkClicked($event)"
+    routerLink="/home/academics"
+    routerLinkActive="active"
+  >
     <mat-icon class="nav-icon-clr">school</mat-icon>
     <div class="tooltip">
       <span>Academics</span>
     </div>
   </button>
-  <button class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/work" routerLinkActive="active">
+  <button matRipple class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/work" routerLinkActive="active">
     <mat-icon class="nav-icon-clr">work</mat-icon>
     <div class="tooltip">
       <span>Work History</span>
     </div>
   </button>
-  <button class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/achievements" routerLinkActive="active">
+  <button
+    matRipple
+    class="nav-link"
+    (click)="onLinkClicked($event)"
+    routerLink="/home/achievements"
+    routerLinkActive="active"
+  >
     <mat-icon class="nav-icon-clr">emoji_events</mat-icon>
     <div class="tooltip">
       <span>Achievements</span>
     </div>
   </button>
-  <button class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/code" routerLinkActive="active">
+  <button matRipple class="nav-link" (click)="onLinkClicked($event)" routerLink="/home/code" routerLinkActive="active">
     <mat-icon class="nav-icon-clr">code</mat-icon>
     <div class="tooltip">
       <span>Code</span>

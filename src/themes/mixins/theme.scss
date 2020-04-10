@@ -47,6 +47,10 @@
       pic-border: (
         clr: map-get($boot, 'accent'),
         width: 0.5rem
+      ),
+      detail-border: (
+        clr: map-get($boot, 'overlay-bg'),
+        width: 0.125rem
       )
     ),
     scroll: (

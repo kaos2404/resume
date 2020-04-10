@@ -3,5 +3,27 @@
   (swipeleft)="swipeNavigate.onSwipeLeft($event)"
   (swiperight)="swipeNavigate.onSwipeRight($event)"
 >
-  Skills
+  <span class="header accent-clr">Skills</span>
+  <div class="frame detail-bg">
+    <section class="list detail-bg" [ngClass]="{ active: !showActive }">
+      <div
+        class="detail detail-border-bottom"
+        matRipple
+        *ngFor="let item of list"
+        (click)="onItemClicked($event, item)"
+      >
+        <i class="{{ item.type }} fab fa-{{ item.icon }} icon detail-icon-clr" aria-hidden="true"></i>
+        <span>{{ item.name }}</span>
+      </div>
+    </section>
+    <section class="description detail-bg" [ngClass]="{ active: showActive }">
+      <div class="detail accent-clr detail-border-bottom">
+        <span>{{ active.name }}</span>
+        <mat-icon matRipple (click)="showActive = false">arrow_back_ios</mat-icon>
+      </div>
+      <div class="lines">
+        <span class="line" *ngFor="let line of active.description">{{ line }}</span>
+      </div>
+    </section>
+  </div>
 </div>

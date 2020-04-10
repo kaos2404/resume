@@ -8,6 +8,7 @@
 >
   <button
     class="home nav-link"
+    matRipple
     routerLink="/"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{ exact: true }"
@@ -21,7 +22,7 @@
       <mat-icon class="nav-icon-clr">{{ breadcrumbIcon }}</mat-icon>
     </div>
   </div>
-  <button class="nav mobile-only" (click)="toggleNavBar($event)">
+  <button matRipple class="nav mobile-only" (click)="toggleNavBar($event)">
     <mat-icon class="menu-icon-clr">menu</mat-icon>
   </button>
   <button class="mobile desktop-only nav-link active">

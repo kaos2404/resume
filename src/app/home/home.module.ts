@@ -11,7 +11,7 @@ import { SwipeNavigateService } from '../common/service/swipe-navigate.service'
 /* Component */
 import { HomeComponent } from './home.component'
 import { AcademicsComponent } from './academics/academics.component'
-import { AchievementsComponent } from './achievements/achivements.component'
+import { AchievementsComponent } from './achievements/achievements.component'
 import { CodeComponent } from './code/code.component'
 import { PersonalDetailsComponent } from './personal-details/personal-details.component'
 import { SkillsComponent } from './skills/skills.component'

@@ -1,8 +1,111 @@
 .container {
   height: 100%;
   overflow: auto;
-  scroll-snap-type: y mandatory;
-  .snap-to {
-    scroll-snap-align: start;
+  padding: 4rem 8rem;
+  display: flex;
+  flex-direction: column;
+  .header {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  span {
+    display: block;
+  }
+}
+
+.frame {
+  display: flex;
+  height: calc(100% - 3.5rem);
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 0.25rem;
+}
+section {
+  width: 50%;
+  display: block;
+  flex-direction: column;
+  overflow-y: auto;
+  touch-action: pan-y;
+  padding: 0 1rem;
+  .detail {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    cursor: pointer;
+    .icon {
+      height: 2rem;
+      width: 2rem;
+      font-size: 2rem;
+      margin-right: 1rem;
+      user-select: none;
+    }
+  }
+  &.list .detail {
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
+  &.description {
+    height: 100%;
+    .detail {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      span {
+        width: calc(100% - 3rem);
+      }
+      mat-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        font-size: 1.5rem;
+        margin-left: auto;
+        display: none;
+      }
+    }
+    .lines {
+      padding: 1rem;
+      overflow-y: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 2rem 1rem;
+    .frame {
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      section {
+        width: 100%;
+        z-index: 1;
+        transition: all 0.5s ease;
+        perspective: 200px;
+        transform-style: preserve-3d;
+        will-change: transform;
+        &.description {
+          position: absolute;
+          transform: rotateY(90deg) translateX(100%);
+          transform-origin: top right;
+          display: flex;
+          flex-direction: column;
+          &.active {
+            transform: rotateY(0deg) translateX(0%);
+          }
+          .detail {
+            mat-icon {
+              display: block;
+            }
+          }
+        }
+        &.list {
+          transform: rotateY(90deg) translateX(-100%);
+          transform-origin: top left;
+          &.active {
+            transform: rotateY(0deg) translateX(0%);
+          }
+        }
+      }
+    }
   }
 }

@@ -9,7 +9,7 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
 import { SkillsComponent } from './skills/skills.component'
 import { AcademicsComponent } from './academics/academics.component'
 import { WorkHistoryComponent } from './work-history/work-history.component'
-import { AchievementsComponent } from './achievements/achivements.component'
+import { AchievementsComponent } from './achievements/achievements.component'
 import { CodeComponent } from './code/code.component'
 
 export const routes: Routes = [

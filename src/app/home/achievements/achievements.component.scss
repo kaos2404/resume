@@ -32,7 +32,7 @@ section {
       height: 2rem;
       width: 2rem;
       font-size: 2rem;
-      margin-left: 1rem;
+      margin: 0 0.5rem;
     }
     .filter-container {
       display: flex;
@@ -79,13 +79,15 @@ section {
       .filters {
         mat-icon {
           cursor: pointer;
-          margin-left: 0;
+          margin: 0;
         }
         .filter-container {
           position: absolute;
           right: calc(100% + 0.25rem);
-          top: 0;
+          top: -25%;
           display: none;
+          padding: 0.5rem 0.25rem;
+          border-radius: 0.25rem;
         }
         &:active,
         &:focus {
