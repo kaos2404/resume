@@ -103,7 +103,7 @@ export class SkillsComponent {
         description: [
           'Apr, 2017 - Apr, 2019',
           'Spring was introduced to me when my client requested for an admin portal to the application I was working on.',
-          'The concepts of dependency injection, annoations, contexts were all new to me then. I had spent a lot of time studying and understanding how things actually worked. It was then that I realized how powerful annotaions were and had soon developed two programs using annotation proccessing that reduced the efforts of many across my team and outside.'
+          'The concepts of dependency injection, annotations, contexts were all new to me then. I had spent a lot of time studying and understanding how things actually worked. It was then that I realized how powerful annotaions were and had soon developed two programs using annotation proccessing that reduced the efforts of many across my team and outside.'
         ]
       },
       {
