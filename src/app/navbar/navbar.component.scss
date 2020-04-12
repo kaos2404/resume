@@ -62,56 +62,56 @@
     left: 1rem;
     bottom: 1rem;
     .themes-container {
-      left: 100%;
-      height: 0;
-      width: 0;
+      height: 8rem;
+      width: 8rem;
+      transform: translateX(-50%) scale(0);
+      opacity: 0;
+      transform-origin: bottom;
+      will-change: transform;
+      position: absolute;
+      transition: all 0.3s cubic-bezier(0.6, -0.2, 0.735, 0.045);
+      bottom: 0;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: auto;
+      .themes {
+        position: absolute;
+        width: 8rem;
+        height: 8rem;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        .theme {
+          width: 3rem;
+          height: 3rem;
+          margin: 0.5rem;
+          background-color: red;
+          border-radius: 50%;
+          overflow: hidden;
+          border: solid 0.3rem #111111;
+          display: flex;
+          overflow: hidden;
+          transform: rotateZ(45deg);
+          cursor: pointer;
+          opacity: 0.3;
+          &.active {
+            opacity: 1;
+          }
+          .color {
+            width: 1.5rem;
+            height: 3rem;
+          }
+          &.light {
+            border: solid 0.3rem #f0f0f0;
+          }
+        }
+      }
     }
     &:focus {
       .themes-container {
-        left: calc(100% + 2rem);
-        height: 8rem;
-        width: 8rem;
-      }
-    }
-  }
-  .themes-container {
-    position: absolute;
-    transition: all 0.25s ease;
-    bottom: 25%;
-    border-radius: 4px;
-    overflow: hidden;
-    cursor: auto;
-    .themes {
-      position: absolute;
-      width: 8rem;
-      height: 8rem;
-      bottom: 0;
-      left: 0;
-      display: flex;
-      flex-wrap: wrap;
-      .theme {
-        width: 3rem;
-        height: 3rem;
-        margin: 0.5rem;
-        background-color: red;
-        border-radius: 50%;
-        overflow: hidden;
-        border: solid 0.3rem #111111;
-        display: flex;
-        overflow: hidden;
-        transform: rotateZ(45deg);
-        cursor: pointer;
-        opacity: 0.3;
-        &.active {
-          opacity: 1;
-        }
-        .color {
-          width: 1.5rem;
-          height: 3rem;
-        }
-        &.light {
-          border: solid 0.3rem #f0f0f0;
-        }
+        opacity: 1;
+        transform: translateX(50%) scale(1);
       }
     }
   }
@@ -128,15 +128,13 @@
       }
       &.themes {
         .themes-container {
-          left: 0;
-          height: 0;
-          width: 0;
+          transform: translateX(0%) scale(0);
+          opacity: 0;
         }
         &:focus {
           .themes-container {
-            left: -10rem;
-            height: 8rem;
-            width: 8rem;
+            transform: translateX(-9.5rem) scale(1);
+            opacity: 1;
           }
         }
       }

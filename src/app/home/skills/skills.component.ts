@@ -139,7 +139,7 @@ export class SkillsComponent {
         name: 'Oracle PL/SQL',
         description: [
           'Nov, 2016 - Apr, 2019',
-          'Queries, procedures and millions of records ofter made my life very difficult. Understanding how queries worked, joins, keys, cascading, sqlldr, and so much more made my life less difficult but not that much. Sometimes I have stayed in office for 16 hrs straight because the data took too much time to process.'
+          'Queries, procedures and millions of records often made my life very difficult. Understanding how queries worked, joins, keys, cascading, sqlldr, and so much more made my life less difficult but not that much. Sometimes I have stayed in office for 16 hrs straight because the data took too much time to process.'
         ]
       },
       {

@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core'
+import { trigger } from '@angular/animations'
 
 import { ThemeService } from './common/service/theme.service'
 import { RouteStateService } from './common/service/route-state.service'
+import { routeSlide } from './common/model/animations'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [trigger('route', routeSlide)]
 })
 export class AppComponent implements OnInit {
   public sideNav: boolean
@@ -33,12 +36,21 @@ export class AppComponent implements OnInit {
     })
   }
 
-  toggleNavBar(event: Event) {
+  public toggleNavBar(event: Event) {
     event.stopPropagation()
     this.sideNav = !this.sideNav
   }
 
-  closeNavBar(isClose: boolean) {
+  public closeNavBar(isClose: boolean) {
     this.sideNav = false
+  }
+
+  public resetAnimation() {
+    this.routeStateService.animate = 'void'
+  }
+
+  public resetRouteState(event: Event) {
+    this.breadcrumbIcon = null
+    this.routeStateService.setAnimate(null)
   }
 }

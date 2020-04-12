@@ -19,8 +19,6 @@ export class NavbarComponent {
   }
 
   public onLinkClicked(event: Event) {
-    setTimeout(() => {
-      this.close.emit(true)
-    }, 300)
+    this.close.emit(true)
   }
 }

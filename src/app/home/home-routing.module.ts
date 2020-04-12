@@ -23,7 +23,10 @@ export const routes: Routes = [
       { path: 'work', component: WorkHistoryComponent },
       { path: 'achievements', component: AchievementsComponent },
       { path: 'code', component: CodeComponent }
-    ]
+    ].map((item, i) => ({
+      ...item,
+      data: { pos: i + 1 }
+    }))
   }
 ]
 

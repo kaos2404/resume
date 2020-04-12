@@ -12,7 +12,7 @@
     routerLink="/"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{ exact: true }"
-    (click)="breadcrumbIcon = null"
+    (click)="resetRouteState($event)"
   >
     <mat-icon class="nav-icon-clr">home</mat-icon>
   </button>
@@ -31,7 +31,9 @@
 </div>
 
 <div class="content" [ngClass]="{ down: bannerDown }">
-  <router-outlet></router-outlet>
+  <div class="route-container" [@route]="routeStateService.animate" (@route.done)="resetAnimation()">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
 <img class="preload-image" src="assets/img/me.jpg" />

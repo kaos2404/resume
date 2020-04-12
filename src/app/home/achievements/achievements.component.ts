@@ -1,8 +1,8 @@
 import { Component } from '@angular/core'
 
-import { SwipeNavigateService } from 'src/app/common/service/swipe-navigate.service'
-
 import { Achievement, Filter } from 'src/app/common/model/achievements.model'
+import { SwipeNavigateService } from 'src/app/common/service/swipe-navigate.service'
+import { fadeOut } from 'src/app/common/model/animations'
 
 @Component({
   templateUrl: './achievements.component.html',

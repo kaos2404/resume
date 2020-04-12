@@ -42,6 +42,7 @@ section {
         padding: 0.25rem;
         border-radius: 0.25rem;
         cursor: pointer;
+        transition: all 0.25s ease;
         svg {
           height: 2rem;
           width: 2rem;
@@ -85,14 +86,18 @@ section {
           position: absolute;
           right: calc(100% + 0.25rem);
           top: -25%;
-          display: none;
+          transition: all 0.3s cubic-bezier(0.6, -0.2, 0.735, 0.045);
+          transform: translateX(0) scale(0);
+          transform-origin: right;
+          opacity: 0;
           padding: 0.5rem 0.25rem;
           border-radius: 0.25rem;
         }
         &:active,
         &:focus {
           .filter-container {
-            display: flex;
+            transform: translateX(-0.5rem) scale(1);
+            opacity: 1;
           }
         }
       }

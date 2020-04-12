@@ -9,7 +9,6 @@ import { MaterialModule } from '../common/material.module'
 import { SwipeNavigateService } from '../common/service/swipe-navigate.service'
 
 /* Component */
-import { HomeComponent } from './home.component'
 import { AcademicsComponent } from './academics/academics.component'
 import { AchievementsComponent } from './achievements/achievements.component'
 import { CodeComponent } from './code/code.component'
@@ -19,7 +18,6 @@ import { WorkHistoryComponent } from './work-history/work-history.component'
 
 @NgModule({
   declarations: [
-    HomeComponent,
     AcademicsComponent,
     AchievementsComponent,
     CodeComponent,
