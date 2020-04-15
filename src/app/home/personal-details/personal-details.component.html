@@ -7,94 +7,53 @@
     <span class="header accent-clr">Details</span>
     <div class="detail detail-bg">
       <i class="fas fa-user-tie icon detail-icon-clr" aria-hidden="true"></i>
-      <span>Avirup Das</span>
+      <span>{{ details.name }}</span>
     </div>
     <div class="detail detail-bg">
       <mat-icon class="icon detail-icon-clr">email</mat-icon>
-      <a class="link-ref" href="mailto:avirup.kaos.das@gmail.com"
-        >avirup.kaos.das@gmail.com <mat-icon class="icon detail-icon-clr">launch</mat-icon></a
+      <a class="link-ref" href="mailto:{{ details.email }}"
+        >{{ details.email }} <mat-icon class="icon detail-icon-clr">launch</mat-icon></a
       >
     </div>
     <div class="detail detail-bg">
       <mat-icon class="icon detail-icon-clr">phone</mat-icon>
       <div class="lines">
-        <a class="link-ref" href="tel:+919038256283"
-          >+91 9038 256 283 <mat-icon class="icon detail-icon-clr">launch</mat-icon></a
-        >
-        <a class="link-ref" href="tel:+918369740279"
-          >+91 8369 740 279 <mat-icon class="icon detail-icon-clr">launch</mat-icon></a
+        <a class="link-ref" [href]="phone.link" *ngFor="let phone of details.phone"
+          >{{ phone.desc }} <mat-icon class="icon detail-icon-clr">launch</mat-icon></a
         >
       </div>
     </div>
     <div class="detail detail-bg">
       <mat-icon class="icon detail-icon-clr">person_pin</mat-icon>
       <div class="lines">
-        <span>2/H/4, Raja Janmenjoy Road, Beleghata</span>
-        <span>Kolkata, West Bengal</span>
-        <span>India - 700010</span>
+        <span *ngFor="let line of details.address">{{ line }}</span>
       </div>
     </div>
     <div class="detail detail-bg">
       <mat-icon class="icon detail-icon-clr">my_location</mat-icon>
-      <span>Kolkata, West Bengal</span>
+      <span>{{ details.location }}</span>
     </div>
     <div class="detail detail-bg">
       <i class="fas fa-id-card icon detail-icon-clr" aria-hidden="true"></i>
-      <span>COFPD9092G</span>
+      <span>{{ details.pan }}</span>
     </div>
-    <div class="detail detail-bg">
-      <i class="fab fa-facebook-square icon detail-icon-clr" aria-hidden="true"></i>
-      <a class="link-ref" href="https://www.facebook.com/avirup.kaos" target="_blank"
-        >avirup.kaos <mat-icon class="icon detail-icon-clr">launch</mat-icon></a
-      >
-    </div>
-    <div class="detail detail-bg">
-      <i class="fab fa-linkedin icon detail-icon-clr" aria-hidden="true"></i>
-      <a class="link-ref" href="https://www.linkedin.com/in/avirup-das-498780103/" target="_blank"
-        >avirup-das-498780103 <mat-icon class="icon detail-icon-clr">launch</mat-icon></a
+    <div class="detail detail-bg" *ngFor="let social of details.socials">
+      <i class="fab fa-{{ social.icon }} icon detail-icon-clr" aria-hidden="true"></i>
+      <a class="link-ref" [href]="social.link" target="_blank"
+        >{{ social.desc }} <mat-icon class="icon detail-icon-clr">launch</mat-icon></a
       >
     </div>
   </section>
   <section>
     <span class="header accent-clr">Languages</span>
-    <div class="detail detail-bg">
-      <span>English</span>
-      <div class="ratings">
-        <mat-icon class="icon detail-icon-clr">star</mat-icon>
-        <mat-icon class="icon detail-icon-clr">star</mat-icon>
-        <mat-icon class="icon detail-icon-clr">star</mat-icon>
-        <mat-icon class="icon detail-icon-clr">star</mat-icon>
-        <mat-icon class="icon detail-icon-clr">star_half</mat-icon>
-      </div>
-    </div>
-    <div class="detail detail-bg">
-      <span>Bengali</span>
-      <div class="ratings">
-        <mat-icon class="icon detail-icon-clr">star</mat-icon>
-        <mat-icon class="icon detail-icon-clr">star</mat-icon>
-        <mat-icon class="icon detail-icon-clr">star</mat-icon>
-        <mat-icon class="icon detail-icon-clr">star</mat-icon>
-        <mat-icon class="icon detail-icon-clr">star_outline</mat-icon>
-      </div>
-    </div>
-    <div class="detail detail-bg">
-      <span>Hindi</span>
-      <div class="ratings">
-        <mat-icon class="icon detail-icon-clr">star</mat-icon>
-        <mat-icon class="icon detail-icon-clr">star</mat-icon>
-        <mat-icon class="icon detail-icon-clr">star</mat-icon>
-        <mat-icon class="icon detail-icon-clr">star_half</mat-icon>
-        <mat-icon class="icon detail-icon-clr">star_outline</mat-icon>
-      </div>
+    <div class="detail detail-bg" *ngFor="let language of details.languages">
+      <span>{{ language.desc }}</span>
+      <div class="ratings" [rating]="language.rating"></div>
     </div>
     <br />
     <span class="header accent-clr">Interests and Hobbies</span>
     <div class="detail detail-bg">
-      <span
-        >Gaming is one of my favourite hobbies. Apart from that I like to cook and love to learn about new technologies,
-        softwares and applications in the field of computers and mobile phones. I have at times committed to Android app
-        development in my free time. I am also a part of the CSR team at my current organization.
-      </span>
+      <span>{{ details.hobbies }} </span>
     </div>
   </section>
 </div>

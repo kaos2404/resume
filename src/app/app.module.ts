@@ -13,11 +13,13 @@ import { SharedModule } from './common/shared.module'
 /* Service */
 import { ThemeService } from './common/service/theme.service'
 import { RouteStateService } from './common/service/route-state.service'
+import { DataStoreService } from './common/service/data-store.service'
 
 /* Component */
 import { AppComponent } from './app.component'
 import { NavbarComponent } from './navbar/navbar.component'
 import { AboutComponent } from './about/about.component'
+import { AppGuard } from './common/guards/app-guard'
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, AboutComponent],
@@ -31,7 +33,7 @@ import { AboutComponent } from './about/about.component'
     MaterialModule,
     SharedModule
   ],
-  providers: [ThemeService, RouteStateService],
+  providers: [ThemeService, RouteStateService, DataStoreService, AppGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

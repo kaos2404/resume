@@ -1,9 +1,9 @@
 export interface Achievement {
-  type: 'award' | 'certificate' | 'scroll'
+  type: string
   message: string
 }
 
 export interface Filter {
-  type: 'award' | 'certificate' | 'scroll'
+  type: string
   active: boolean
 }
